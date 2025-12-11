@@ -33,7 +33,7 @@ function findRootSecant(x0 = 0, x1 = 10, epsilon = 1e-6, maxIterations = 1000) {
 // Отображение результата и графика
 function updateVisibility() {
   resultSpan.style.display = resultSpan.textContent.trim() ? "block" : "none";
-  chartCanvas.style.display = !chartExists || hasError() ? "none" : "block";
+  // chartCanvas.style.display = !chartExists || hasError() ? "none" : "block";
 }
 
 // Парсинг интервала вида "[a, b]"
@@ -115,11 +115,10 @@ function handleSubmit(event) {
     const root = findRootSecant(x0, x1);
     resultSpan.textContent = `Корень уравнения: x ≈ ${root.toFixed(6)}`;
 
-    drawChart(x0, x1, root);
+    // drawChart(x0, x1, root);
     updateVisibility();
   } catch (err) {
     resultSpan.textContent = `Ошибка: ${err.message}`;
-    chartCanvas.style.display = "none";
     updateVisibility();
   }
 }

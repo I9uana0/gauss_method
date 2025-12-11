@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+html,
+body {
+  font-family: Roboto, sans-serif;
+  height: 100%;
+  background: #f4f6f8;
+  margin: 0;
+}
+
+/* Центровка */
+body {
+  display: flex;
+  justify-content: center;
+  padding: 30px 10px;
+  box-sizing: border-box;
+}
+
+/* Обёртка */
+#wrapper {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+}
+
+/* Заголовок */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #333;
+}
+
+.header-container {
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.header-container h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.back-link {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #3b82f6;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: #2563eb;
+}
+
+/* Карточка формы */
+#form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e1e3e6;
+}
+
+/* Текстовые поля */
+#intervalInput {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f9fafb;
+  transition: border-color 0.2s;
+}
+
+#intervalInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #fff;
+}
+
+#initialGuessInput {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 15px;
+  background: #f9fafb;
+  transition: border-color 0.2s;
+}
+
+#initialGuessInput:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: #fff;
+}
+
+/* Кнопка */
+#calcButton {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: transform 0.15s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+@media (hover:hover) {
+  #calcButton:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+#calcButton:active {
+  transform: scale(0.97);
+  opacity: 1;
+}
+
+/* Начальное состояние */
+#resultSpan,
+#functionChart {
+  display: none;
+}
+
+/* Результат */
+#resultSpan {
+  margin-top: 15px;
+  padding: 14px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e1e3e6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-size: 16px;
+  white-space: pre-line;
+}
+
+/* График */
+#functionChart {
+  margin-top: 20px;
+  background: white;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid #e1e3e6;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+}
+
+@media (max-width: 450px) {
+  .header-container {
+    flex-direction: column-reverse;
+  }
+}

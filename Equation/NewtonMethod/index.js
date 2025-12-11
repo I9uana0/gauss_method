@@ -35,7 +35,7 @@ function findRootNewton(
 // Отображение результата и графика
 function updateVisibility() {
   resultSpan.style.display = resultSpan.textContent.trim() ? "block" : "none";
-  chartCanvas.style.display = !chartExists || hasError() ? "none" : "block";
+  // chartCanvas.style.display = !chartExists || hasError() ? "none" : "block";
 }
 
 // Построение графика функции с корнем
@@ -111,13 +111,10 @@ function handleSubmit(event) {
     resultSpan.textContent = `Корень уравнения: x ≈ ${root.toFixed(6)}`;
 
     // Построим график вокруг корня
-    drawChart(root - 5, root + 5, root);
+    // drawChart(root - 5, root + 5, root);
     updateVisibility();
   } catch (err) {
-    console.error(err);
-
     resultSpan.textContent = `Ошибка: ${err.message}`;
-    chartCanvas.style.display = "none";
     updateVisibility();
   }
 }

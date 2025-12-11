@@ -44,12 +44,7 @@ function parseInterval(intervalStr) {
 // Отображение результата и графика
 function updateVisibility() {
   resultSpan.style.display = resultSpan.textContent.trim() ? "block" : "none";
-
-  if (!chartExists || hasError()) {
-    chartCanvas.style.display = "none";
-  } else {
-    chartCanvas.style.display = "block";
-  }
+  // chartCanvas.style.display = !chartExists || hasError() ? "none" : "block";
 }
 
 // Построение графика функции
@@ -133,11 +128,10 @@ function handleSubmit(event) {
     const root = findRootBisection(a, b);
     resultSpan.textContent = `Корень уравнения: x ≈ ${root.toFixed(6)}`;
 
-    drawChart(a, b, root);
+    // drawChart(a, b, root);
     updateVisibility();
   } catch (err) {
     resultSpan.textContent = `Ошибка: ${err.message}`;
-    chartCanvas.style.display = "none";
     updateVisibility();
   }
 }
